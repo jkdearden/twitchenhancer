@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Twitch Enhancer",
+    "description": "Redirects to chat-less player, will soon allow blocking of users/games/categories.",
+    "permissions": ["storage"],
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.twitch.tv/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
