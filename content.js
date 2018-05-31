@@ -1,15 +1,15 @@
 window.addEventListener("load", main, false);
 
 function cardLinkReplacer() {
-	let cards = document.querySelectorAll("div.live-channel-card");
+	let cards = document.querySelectorAll("div.preview-card");
 	cards.forEach(card => {
 		replaceLink(card);
 	});
 }
 
 function replaceLink(node) {
-	var thumbLink = node.querySelector("div > div:nth-child(1) > a");
-	var thumbFig = node.querySelector("div > div:nth-child(2) > div:nth-child(2) > div > a");
+	var thumbLink = node.querySelector("div:nth-child(1) > a");
+	var thumbFig = node.querySelector("div:nth-child(2) > div:nth-child(2) > div > a");
 
 	var prevRef = thumbLink.href;
 	var newRef = prevRef.replace("www.twitch.tv/", "player.twitch.tv/?channel=");	
