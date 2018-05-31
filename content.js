@@ -1,6 +1,6 @@
 window.addEventListener("load", main, false);
 
-function linkReplacer() {
+function cardLinkReplacer() {
 	let cards = document.querySelectorAll("div.live-channel-card");
 	cards.forEach(card => {
 		replaceLink(card);
@@ -8,12 +8,14 @@ function linkReplacer() {
 }
 
 function replaceLink(node) {
-	var thumbLink = node.querySelector("div > div > div:nth-child(1) > figure > div > a:nth-child(1)");
-	var thumbFig = node.querySelector("div > div > div:nth-child(1) > figure");
+	var thumbLink = node.querySelector("div > div:nth-child(1) > a");
+	var thumbFig = node.querySelector("div > div:nth-child(2) > div:nth-child(2) > div > a");
 
 	var prevRef = thumbLink.href;
-	var newRef = prevRef.replace("www.twitch.tv/", "player.twitch.tv/?channel=");
+	var newRef = prevRef.replace("www.twitch.tv/", "player.twitch.tv/?channel=");	
 	thumbLink.setAttribute("href", newRef);
+	thumbLink.addEventListener("click", () => location.assign(newRef));
+	thumbFig.setAttribute("href", newRef);
 	thumbFig.addEventListener("click", () => location.assign(newRef));
 }
 
@@ -22,7 +24,7 @@ function domChangeCallback(mutationsList) {
 	mutationsList.forEach(mut => {
 		if (mut.addedNodes.length > 0) {
 			console.log("replacing");
-			linkReplacer();
+			cardLinkReplacer();
 		}
 	})
 }
