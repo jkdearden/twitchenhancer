@@ -3,7 +3,7 @@
     "name": "Twitch player redirector",
     "description": "Redirects video card clicks to chat-less player.",
     "permissions": ["storage"],
-    "version": "1.01",
+    "version": "1.03",
     "content_scripts": [
         {
             "matches": [

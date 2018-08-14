@@ -49,6 +49,7 @@ function replaceSidenav(node) {
 		var prevRef = link.href;
 		var newRef = prevRef.replace("www.twitch.tv/", "player.twitch.tv/?channel=");
 		link.setAttribute("href", newRef);
+		node.addEventListener("click", () => location.assign(newRef));
 	}
 }
 
