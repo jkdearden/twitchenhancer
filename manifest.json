@@ -8,5 +8,5 @@
       "history"
     ],
     "background": {"scripts":["content.js"]},
-    "version": "2.0"
+    "version": "2.1"
 }
