@@ -4,7 +4,8 @@
     "description": "Redirects to embedded player because twitch chat is wack.",
     "permissions": [
       "*://www.twitch.tv/*",
-      "tabs"
+      "tabs",
+      "history"
     ],
     "background": {"scripts":["content.js"]},
     "version": "2.0"
